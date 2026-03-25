@@ -1,13 +1,171 @@
----
-layout: presentation
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitLife Studio</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --primary: #22c55e;
+      --muted: #94a3b8;
+      --text: #e2e8f0;
+    }
 
-{% for post in site.posts reversed %}
-	{% include slide.html %}
-	<div class="page-break"></div>
-{% endfor %}
-{% unless site.simple-slideshow %}
-{% if site.overview %}
-<section id="overview" class="step" {% for attr in site.overview-data %} data-{{attr[0]}}="{{attr[1]}}"{% endfor %}></section>
-{% endif %}
-{% endunless %}
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(160deg, #020617, #0f172a 55%, #14532d);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 5rem 0 4rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin: 0;
+    }
+
+    .tagline {
+      margin: 1rem auto 2rem;
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #052e16;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 0.85rem 1.25rem;
+      border-radius: 999px;
+      transition: transform 0.15s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    section {
+      margin: 2rem 0;
+      padding: 2rem;
+      background: rgba(17, 24, 39, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 16px;
+      backdrop-filter: blur(5px);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: rgba(2, 6, 23, 0.65);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 12px;
+      padding: 1rem;
+    }
+
+    .card h3 { margin-top: 0; }
+
+    ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: #cbd5e1;
+    }
+
+    footer {
+      padding: 2rem 0 3rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <h1>FitLife Studio</h1>
+    <p class="tagline">
+      A simple fitness website to help you train smarter, stay consistent, and feel your best.
+    </p>
+    <a href="#plans" class="btn">Explore Plans</a>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Why Train With Us</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Personal Coaching</h3>
+          <p>Get step-by-step workout guidance designed for your goals and fitness level.</p>
+        </article>
+        <article class="card">
+          <h3>Flexible Scheduling</h3>
+          <p>Morning, evening, and weekend sessions for busy students and professionals.</p>
+        </article>
+        <article class="card">
+          <h3>Nutrition Support</h3>
+          <p>Simple meal planning tips to improve energy, recovery, and long-term results.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="plans">
+      <h2>Membership Plans</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Starter</h3>
+          <ul>
+            <li>2 workouts per week</li>
+            <li>Group fitness classes</li>
+            <li>Monthly progress check</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Performance</h3>
+          <ul>
+            <li>4 workouts per week</li>
+            <li>One-on-one coaching</li>
+            <li>Nutrition consultation</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Elite</h3>
+          <ul>
+            <li>Unlimited training sessions</li>
+            <li>Custom program updates</li>
+            <li>Priority trainer support</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Weekly Training Focus</h2>
+      <div class="grid">
+        <article class="card"><strong>Monday:</strong> Full-body strength</article>
+        <article class="card"><strong>Wednesday:</strong> Cardio + core</article>
+        <article class="card"><strong>Friday:</strong> Mobility + conditioning</article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    © 2026 FitLife Studio • Build healthy habits one workout at a time.
+  </footer>
+</body>
+</html>
